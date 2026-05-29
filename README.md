@@ -31,7 +31,7 @@ Production URL: **https://ordinarycs.raginikalvade.com**
 1. Push this repo to GitHub on the `main` branch.
 2. In the repo: **Settings → Pages → Build and deployment → Source** → **GitHub Actions**.
 3. After the first successful workflow run, open **Settings → Pages → Custom domain** and enter `ordinarycs.raginikalvade.com`.
-4. At your DNS host for `raginikalvade.com`, add a **CNAME** for `ordinarycs` pointing to `<your-github-username>.github.io`.
+4. At your DNS host for `raginikalvade.com`, add a **CNAME** for `ordinarycs` pointing to `ragini-kalvade.github.io`.
 5. Enable **Enforce HTTPS** once DNS has propagated.
 
 ## Git hooks (optional)
