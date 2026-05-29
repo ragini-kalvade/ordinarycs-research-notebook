@@ -1,0 +1,102 @@
+.principle {
+  padding: var(--stack-xl) 0;
+  border-top: var(--border-width) solid var(--color-outline-variant);
+}
+
+.principle__title {
+  font-size: var(--text-headline-md);
+  margin-bottom: var(--stack-md);
+}
+
+.principle__body {
+  font-size: var(--text-body-md);
+  color: var(--color-on-surface-variant);
+  max-width: 36rem;
+}
+
+.principle__body p:last-child {
+  margin-bottom: 0;
+}
+
+.principle__text-grid {
+  display: grid;
+  gap: var(--stack-lg);
+}
+
+@media (min-width: 768px) {
+  .principle__text-grid {
+    grid-template-columns: 1fr 240px;
+    align-items: start;
+  }
+}
+
+.principle__aside {
+  border: var(--border-width) solid var(--color-outline-variant);
+  padding: var(--stack-md);
+  background: var(--color-surface-container-low);
+}
+
+.principle__aside-label {
+  margin-bottom: var(--stack-sm);
+  color: var(--color-on-surface-variant);
+}
+
+.principle__aside-text {
+  font-size: var(--text-body-md);
+  margin: 0;
+  color: var(--color-on-surface-variant);
+}
+
+.principle--navy {
+  border-top: none;
+  padding: 0;
+}
+
+.principle__navy-grid {
+  display: grid;
+  min-height: 280px;
+}
+
+@media (min-width: 768px) {
+  .principle__navy-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.principle__navy-block {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  display: flex;
+  align-items: center;
+  padding: var(--stack-xl) var(--gutter);
+}
+
+.principle__navy-title {
+  font-family: var(--font-display);
+  font-size: var(--text-headline-md);
+  color: var(--color-on-primary);
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .principle__navy-title {
+    font-size: 2rem;
+  }
+}
+
+.principle__navy-body {
+  display: flex;
+  align-items: center;
+  padding: var(--stack-xl) var(--gutter);
+  font-size: var(--text-body-md);
+  color: var(--color-on-surface-variant);
+}
+
+.principle__navy-body p:last-child {
+  margin-bottom: 0;
+}
+
+.principle--image-below .principle__image {
+  margin-top: var(--stack-lg);
+  aspect-ratio: 16 / 7;
+}
