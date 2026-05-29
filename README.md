@@ -39,5 +39,3 @@ Production URL: **https://ordinarycs.raginikalvade.com**
 ```bash
 ./scripts/setup-git-hooks.sh
 ```
-
-Disable agent attribution in **Cursor Settings → Agent → Attribution** to avoid co-author trailers on commits.
