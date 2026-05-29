@@ -1,0 +1,20 @@
+.abstract-block {
+  background: var(--color-surface-container-low);
+  border-left: 3px solid var(--color-primary);
+  padding: var(--stack-md) var(--stack-md) var(--stack-md) var(--stack-md);
+  margin-bottom: var(--stack-lg);
+}
+
+.abstract-block__label {
+  color: var(--color-on-surface-variant);
+  margin-bottom: var(--stack-sm);
+}
+
+.abstract-block__content {
+  font-size: var(--text-body-md);
+  color: var(--color-on-surface);
+}
+
+.abstract-block__content p:last-child {
+  margin-bottom: 0;
+}

@@ -1,0 +1,46 @@
+.reader-notes {
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--color-on-surface-variant);
+}
+
+.reader-notes__heading {
+  color: var(--color-on-surface);
+  margin-bottom: var(--stack-md);
+  padding-bottom: var(--stack-sm);
+  border-bottom: var(--border-width) solid var(--color-outline-variant);
+}
+
+.reader-notes__section {
+  margin-bottom: var(--stack-md);
+}
+
+.reader-notes__label {
+  color: var(--color-on-surface);
+  margin-bottom: var(--stack-sm);
+}
+
+.reader-notes ul {
+  margin: 0;
+  padding-left: 1rem;
+}
+
+.reader-notes li {
+  margin-bottom: 0.5rem;
+}
+
+.reader-notes__citations {
+  list-style: none;
+  padding-left: 0;
+  font-size: 0.8125rem;
+}
+
+.reader-notes__citations li {
+  margin-bottom: var(--stack-sm);
+  padding-bottom: var(--stack-sm);
+  border-bottom: var(--border-width) solid var(--color-surface-container);
+}
+
+.reader-notes__citations li:last-child {
+  border-bottom: none;
+}

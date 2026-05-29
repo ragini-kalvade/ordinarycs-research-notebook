@@ -1,0 +1,21 @@
+.citation-block {
+  margin-top: var(--stack-xl);
+  padding-top: var(--stack-lg);
+  border-top: var(--border-width) solid var(--color-outline-variant);
+}
+
+.citation-block__title {
+  font-size: var(--text-headline-md);
+  margin-bottom: var(--stack-md);
+}
+
+.citation-block__list {
+  font-family: var(--font-ui);
+  font-size: 0.9375rem;
+  color: var(--color-on-surface-variant);
+  line-height: 1.6;
+}
+
+.citation-block__list li {
+  margin-bottom: var(--stack-md);
+}

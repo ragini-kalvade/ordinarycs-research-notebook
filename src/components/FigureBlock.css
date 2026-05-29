@@ -1,0 +1,18 @@
+.figure-block {
+  margin: var(--stack-lg) 0;
+}
+
+.figure-block__image {
+  width: 100%;
+  filter: grayscale(100%);
+  border: var(--border-width) solid var(--color-outline-variant);
+}
+
+.figure-block__caption {
+  font-family: var(--font-ui);
+  font-size: var(--text-label-sm);
+  color: var(--color-on-surface-variant);
+  text-align: center;
+  margin-top: var(--stack-sm);
+  letter-spacing: 0.02em;
+}
