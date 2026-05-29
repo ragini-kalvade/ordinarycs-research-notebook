@@ -1,9 +1,0 @@
----
-description: Git commit conventions for this repository
-alwaysApply: true
----
-
-# Git commits
-
-- Never add `Co-authored-by: Cursor <cursoragent@cursor.com>` or any other Co-authored-by trailer to commit messages.
-- Use plain commit messages only (subject + optional body).
