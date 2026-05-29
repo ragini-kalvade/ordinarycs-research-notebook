@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import EditorialHero from '../components/EditorialHero';
+import PrincipleSection from '../components/PrincipleSection';
+import ArchiveCtaBand from '../components/ArchiveCtaBand';
+---
+
+<BaseLayout>
+  <EditorialHero />
+  <section class="landing-hero-image">
+    <div class="container">
+      <img
+        src="/images/hero-typewriter.svg"
+        alt="Monochrome editorial photograph of a typewriter beside stacked papers"
+        class="editorial-image"
+        width="1200"
+        height="514"
+      />
+    </div>
+  </section>
+  <PrincipleSection
+    title="Low Cognitive Load"
+  >
+    <p>
+      Reading is the core work of the researcher. Interfaces should reduce
+      extraneous visual noise, preserve line length, and avoid competing calls to
+      action. The page is a document first.
+    </p>
+  </PrincipleSection>
+  <PrincipleSection
+    title="Timeless Design"
+    variant="navyBlock"
+  >
+    <p>
+      This archive deliberately avoids trend-driven UI patterns. Typography,
+      spacing, and contrast are chosen for decades of use—not quarterly redesigns.
+      What ages well is restraint.
+    </p>
+  </PrincipleSection>
+  <PrincipleSection
+    title="Reading-First Infrastructure"
+    variant="imageBelow"
+    imageSrc="/images/reading-closeup.svg"
+    imageAlt="Close-up of a finger following text on a printed page"
+  >
+    <p>
+      Technical writing deserves infrastructure that respects depth: fixed reading
+      columns, marginalia for careful notes, and figures that support argument
+      rather than decoration.
+    </p>
+  </PrincipleSection>
+  <ArchiveCtaBand />
+</BaseLayout>
+
+<style>
+  .landing-hero-image {
+    margin-bottom: var(--stack-lg);
+  }
+</style>

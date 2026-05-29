@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Notes | The Ordinary Computer Scientist"
+  description="Shorter field notes and observations from ongoing reading."
+>
+  <article class="stub-page container">
+    <p class="label-sm stub-page__eyebrow">Notes</p>
+    <h1>Field notes</h1>
+    <p>
+      Shorter observations from papers in progress, conference sessions, and
+      implementation work. These entries are deliberately informal compared to
+      the full analyses in the papers archive.
+    </p>
+    <p>
+      Notes will appear here as they are ready for publication. For now, see the
+      <a href="/papers">papers collection</a> for completed analyses.
+    </p>
+  </article>
+</BaseLayout>
+
+<style>
+  .stub-page {
+    padding: var(--stack-xl) 0;
+    max-width: var(--reading-width);
+  }
+
+  .stub-page__eyebrow {
+    color: var(--color-on-surface-variant);
+    margin-bottom: var(--stack-md);
+  }
+
+  .stub-page h1 {
+    font-family: var(--font-display);
+    font-size: var(--text-display-lg-mobile);
+    margin-bottom: var(--stack-lg);
+  }
+</style>

@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="About | The Ordinary Computer Scientist"
+  description="About this research archive."
+>
+  <article class="stub-page container">
+    <p class="label-sm stub-page__eyebrow">About</p>
+    <h1>The Ordinary Computer Scientist</h1>
+    <p>
+      A personal research archive by Ragini Kalvade. It collects long-form
+      analyses of papers and systems topics—AI, distributed systems, HCI, and
+      the engineering tradeoffs that sit between them.
+    </p>
+    <p>
+      The name is intentional: most useful work in computing is ordinary in the
+      sense that it is careful, cumulative, and shared through writing—not
+      performed as spectacle.
+    </p>
+    <p>
+      <a href="/papers">Read the archive →</a>
+      {' '}
+      ·
+      {' '}
+      <a href="/philosophy">Research philosophy →</a>
+    </p>
+  </article>
+</BaseLayout>
+
+<style>
+  .stub-page {
+    padding: var(--stack-xl) 0;
+    max-width: var(--reading-width);
+  }
+
+  .stub-page__eyebrow {
+    color: var(--color-on-surface-variant);
+    margin-bottom: var(--stack-md);
+  }
+
+  .stub-page h1 {
+    font-family: var(--font-display);
+    font-size: var(--text-display-lg-mobile);
+    margin-bottom: var(--stack-lg);
+  }
+</style>

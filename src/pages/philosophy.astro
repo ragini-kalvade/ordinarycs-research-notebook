@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Research Philosophy | The Ordinary Computer Scientist"
+  description="Principles guiding this research archive."
+>
+  <article class="stub-page container">
+    <p class="label-sm stub-page__eyebrow">Research Philosophy</p>
+    <h1>Reading as primary work</h1>
+    <p>
+      This archive treats careful reading—not rapid consumption—as the central
+      activity of technical inquiry. Analyses are written to be revisited, argued
+      with, and revised as understanding changes.
+    </p>
+    <p>
+      I am skeptical of interfaces that compress argument into scores, summaries,
+      or engagement metrics. If a claim matters, it should survive prose, citation,
+      and explicit uncertainty.
+    </p>
+    <h2>What belongs here</h2>
+    <p>
+      Paper analyses, systems notes, and engineering reflections where the author
+      states assumptions plainly and leaves questions visible. The tone is
+      reflective, not promotional.
+    </p>
+    <h2>What does not</h2>
+    <p>
+      Product announcements, growth narratives, and content written primarily to
+      demonstrate velocity. This site is an archive, not a funnel.
+    </p>
+    <p>
+      <a href="/papers">Browse the papers archive →</a>
+    </p>
+  </article>
+</BaseLayout>
+
+<style>
+  .stub-page {
+    padding: var(--stack-xl) 0;
+    max-width: var(--reading-width);
+  }
+
+  .stub-page__eyebrow {
+    color: var(--color-on-surface-variant);
+    margin-bottom: var(--stack-md);
+  }
+
+  .stub-page h1 {
+    font-family: var(--font-display);
+    font-size: var(--text-display-lg-mobile);
+    margin-bottom: var(--stack-lg);
+  }
+
+  @media (min-width: 768px) {
+    .stub-page h1 {
+      font-size: 2.25rem;
+    }
+  }
+
+  .stub-page h2 {
+    font-size: var(--text-headline-md);
+    margin-top: var(--stack-lg);
+  }
+</style>

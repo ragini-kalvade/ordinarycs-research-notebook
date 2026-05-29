@@ -1,0 +1,108 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const papers = (await getCollection('papers')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<BaseLayout
+  title="Papers | The Ordinary Computer Scientist"
+  description="Research analyses and paper notes from the archive."
+>
+  <section class="papers-index container">
+    <header class="papers-index__header">
+      <p class="label-sm papers-index__eyebrow">Research Archive</p>
+      <h1>Papers</h1>
+      <p class="papers-index__intro">
+        Long-form analyses written for careful reading. Each entry documents a
+        problem, method, and open questions—not a verdict.
+      </p>
+    </header>
+    <ul class="papers-index__list">
+      {
+        papers.map((paper) => (
+          <li class="papers-index__item">
+            <a href={`/papers/${paper.id}`} class="papers-index__link">
+              <h2 class="papers-index__title">{paper.data.title}</h2>
+              <p class="papers-index__meta">
+                <time datetime={paper.data.pubDate.toISOString()}>
+                  {paper.data.pubDate.toLocaleDateString('en-US', {
+                    month: 'long',
+                    year: 'numeric',
+                  })}
+                </time>
+                <span aria-hidden="true"> · </span>
+                <span>{paper.data.readingTime}</span>
+              </p>
+              <p class="papers-index__excerpt">{paper.data.description}</p>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</BaseLayout>
+
+<style>
+  .papers-index {
+    padding: var(--stack-xl) 0;
+  }
+
+  .papers-index__header {
+    max-width: 40rem;
+    margin-bottom: var(--stack-xl);
+  }
+
+  .papers-index__eyebrow {
+    color: var(--color-on-surface-variant);
+    margin-bottom: var(--stack-md);
+  }
+
+  .papers-index__intro {
+    color: var(--color-on-surface-variant);
+    font-size: var(--text-body-lg);
+    line-height: var(--leading-body-lg);
+  }
+
+  .papers-index__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .papers-index__item {
+    border-top: var(--border-width) solid var(--color-outline-variant);
+  }
+
+  .papers-index__link {
+    display: block;
+    padding: var(--stack-lg) 0;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .papers-index__link:hover .papers-index__title {
+    color: var(--color-primary);
+  }
+
+  .papers-index__title {
+    font-size: var(--text-headline-md);
+    margin-bottom: var(--stack-sm);
+    transition: color 0.15s ease;
+  }
+
+  .papers-index__meta {
+    font-family: var(--font-ui);
+    font-size: var(--text-label-md);
+    color: var(--color-on-surface-variant);
+    margin-bottom: var(--stack-md);
+  }
+
+  .papers-index__excerpt {
+    color: var(--color-on-surface-variant);
+    margin: 0;
+    max-width: 48rem;
+  }
+</style>
