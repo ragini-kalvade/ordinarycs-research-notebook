@@ -1,0 +1,46 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import ArticleHeader from '../components/ArticleHeader';
+import AbstractBlock from '../components/AbstractBlock';
+import ReaderNotes from '../components/ReaderNotes';
+import type { CollectionEntry } from 'astro:content';
+import '../styles/article.css';
+
+interface Props {
+  paper: CollectionEntry<'papers'>;
+}
+
+const { paper } = Astro.props;
+const { title, description, author, pubDate, readingTime, tags, sidebar } =
+  paper.data;
+---
+
+<BaseLayout title={`${title} | The Ordinary Computer Scientist`} description={description}>
+  <div id="reading-progress" class="reading-progress" aria-hidden="true"></div>
+  <article class="article-page container">
+    <div class="article-page__grid">
+      <div class="article-page__main">
+        <ArticleHeader
+          title={title}
+          author={author}
+          date={pubDate.toISOString()}
+          readingTime={readingTime}
+          tags={tags}
+        />
+        <AbstractBlock>
+          <p>{description}</p>
+        </AbstractBlock>
+        <div class="article-page__sidebar-mobile">
+          <ReaderNotes data={sidebar} />
+        </div>
+        <div class="article-body">
+          <slot />
+        </div>
+      </div>
+      <div class="article-page__sidebar-desktop">
+        <ReaderNotes data={sidebar} />
+      </div>
+    </div>
+  </article>
+  <script src="../scripts/reading-progress.ts"></script>
+</BaseLayout>
