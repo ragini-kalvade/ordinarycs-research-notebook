@@ -1,0 +1,49 @@
+:root {
+  /* Surfaces */
+  --color-background: #fcf9f8;
+  --color-surface-container: #f0edec;
+  --color-surface-container-low: #f6f3f2;
+  --color-on-surface: #1c1b1b;
+  --color-on-surface-variant: #43474e;
+  --color-outline: #74777f;
+  --color-outline-variant: #c4c6cf;
+
+  /* Primary / navy */
+  --color-primary: #002045;
+  --color-primary-container: #1a365d;
+  --color-on-primary: #ffffff;
+
+  /* Typography families */
+  --font-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --font-display: 'Noto Serif', Georgia, 'Times New Roman', serif;
+  --font-ui: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Type scale */
+  --text-display-lg: 3rem;
+  --leading-display-lg: 3.5rem;
+  --text-display-lg-mobile: 2rem;
+  --leading-display-lg-mobile: 2.5rem;
+  --text-headline-md: 1.5rem;
+  --leading-headline-md: 2rem;
+  --text-body-lg: 1.25rem;
+  --leading-body-lg: 2rem;
+  --text-body-md: 1.0625rem;
+  --leading-body-md: 1.75rem;
+  --text-label-md: 0.875rem;
+  --text-label-sm: 0.75rem;
+
+  /* Layout */
+  --container-max: 1120px;
+  --reading-width: 720px;
+  --sidebar-width: 260px;
+  --gutter: 24px;
+  --margin-mobile: 16px;
+  --stack-sm: 8px;
+  --stack-md: 24px;
+  --stack-lg: 48px;
+  --stack-xl: 80px;
+
+  /* Shapes */
+  --radius-button: 0;
+  --border-width: 1px;
+}
