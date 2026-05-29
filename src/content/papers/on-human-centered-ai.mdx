@@ -1,0 +1,101 @@
+---
+title: "On the Feasibility of Human-Centered AI"
+description: "This analysis examines the tension between model capability, interpretability, and human agency in contemporary AI systems. Rather than treating automation as the default goal, it asks where human judgment should remain structurally present in the system."
+author: "Ragini Kalvade"
+pubDate: 2023-10-15
+readingTime: "12 min read"
+tags:
+  - Human-Computer Interaction
+  - Interpretability
+  - Systems Design
+sidebar:
+  observations:
+    - "Legibility and contestability matter as much as raw predictive accuracy in deployed settings."
+    - "Human-in-the-loop is not a temporary scaffold—it may be a durable architectural choice."
+    - "Capability gains can erode agency if interfaces collapse decision points."
+  openQuestions:
+    - "Where should refusal or deferral be a first-class system action?"
+    - "How do we measure whether a human actually understood the model's recommendation?"
+    - "What governance structures survive model updates without silent behavior drift?"
+  relatedPapers:
+    - "Amershi et al., Guidelines for Human-AI Interaction (2019)"
+    - "Liao et al., Questioning the AI (2020)"
+    - "Weld & Bansal, The Challenge of Crafting Intelligible Intelligence (2018)"
+  citations:
+    - "Amershi, S. et al. CHI 2019."
+    - "Liao, Q. V. et al. CHI 2020."
+    - "Weld, D. & Bansal, G. CACM 2018."
+references:
+  - "Amershi, S., Weld, D., Vorvoreanu, M., Fourney, A., Nushi, P., Collisson, P., … Horvitz, E. (2019). Guidelines for Human-AI Interaction. Proceedings of CHI 2019."
+  - "Liao, Q. V., Gruen, D., & Miller, S. (2020). Questioning the AI: Informing Design Practices for Explainable AI. Proceedings of CHI 2020."
+  - "Weld, D. S., & Bansal, G. (2018). The Challenge of Crafting Intelligible Intelligence. Communications of the ACM, 61(6), 70–77."
+  - "Shneiderman, B. (2022). Human-Centered AI. Oxford University Press."
+---
+
+import FigureBlock from '../../components/FigureBlock';
+import CitationBlock from '../../components/CitationBlock';
+
+export const references = [
+  "Amershi, S., Weld, D., Vorvoreanu, M., Fourney, A., Nushi, P., Collisson, P., … Horvitz, E. (2019). Guidelines for Human-AI Interaction. Proceedings of CHI 2019.",
+  "Liao, Q. V., Gruen, D., & Miller, S. (2020). Questioning the AI: Informing Design Practices for Explainable AI. Proceedings of CHI 2020.",
+  "Weld, D. S., & Bansal, G. (2018). The Challenge of Crafting Intelligible Intelligence. Communications of the ACM, 61(6), 70–77.",
+  "Shneiderman, B. (2022). Human-Centered AI. Oxford University Press.",
+];
+
+## 1. Problem
+
+Contemporary AI systems are often evaluated on capability benchmarks that treat the human operator as an afterthought. The deployment question is framed as how much can be automated, not where judgment should remain visible, interruptible, and accountable.
+
+This analysis starts from a narrower claim: human-centered design is not sentimental—it is a structural response to irreducible uncertainty in real environments. When models fail quietly, the cost is borne by people downstream.
+
+## 2. Core Idea
+
+Human-centered AI, as I use the term here, does not mean "slow" or "manual." It means that certain decision points are designed to preserve human agency by default: the ability to understand, refuse, override, and audit.
+
+The central tension is tripartite: capability pushes toward delegation; interpretability pushes toward explanation; agency pushes toward control. These three forces do not align naturally in a single interface.
+
+> The question is not whether humans remain in the loop, but which loops are worth preserving when the model is wrong in ways that are hard to detect.
+
+## 3. Architecture / Method
+
+I consider a simple reference architecture: sensing layer, model layer, policy layer, and human review surface. The policy layer is where contestability should live—not buried in post-hoc dashboards.
+
+<FigureBlock
+  src="/images/network-diagram.svg"
+  alt="Schematic showing Human, Policy, Model, and Outcome nodes connected by directed edges"
+  caption="Figure 1. A minimal human-in-the-loop reference architecture. Policy mediates between model output and downstream action."
+/>
+
+The method is comparative rather than empirical in this note: I map common deployment patterns (full automation, alert-and-confirm, co-pilot drafting) against failure modes observed in field studies and practitioner accounts.
+
+## 4. What Works
+
+Patterns that tend to hold up in practice share a few traits. Explanations are tied to specific decisions, not generic model cards. Overrides are logged without punishing the operator. Latency budgets acknowledge that reading takes time.
+
+Interfaces that expose uncertainty in calibrated language—rather than false precision—appear to support better escalation behavior, though the evidence base is still thin outside clinical and safety-critical domains.
+
+## 5. What Breaks
+
+Capability gains can collapse the decision surface. When a co-pilot drafts entire documents end-to-end, the human role drifts from author to approver, and approval becomes ritual. This is not a UI bug; it is an incentive problem.
+
+Explanation widgets often fail when they are decoupled from action: saliency maps that do not map to controls the user actually has. The system looks transparent while remaining ungovernable.
+
+## 6. Engineering Implications
+
+Teams should treat human review capacity as a rate-limited resource, not an infinite buffer. That implies queueing, sampling, and explicit deferral states in the API—not only in the interface.
+
+Versioning must include behavior diffs humans can read. Silent model updates are incompatible with accountable review. I would prefer coarse release notes over opaque continuous deployment for high-stakes paths.
+
+## 7. Questions I Still Have
+
+I do not yet have a satisfactory metric for "understood recommendation" that survives adversarial clicking. Time-on-screen is a weak proxy. Task outcome alone hides compliant error.
+
+I am also uncertain how to design refusal without training users to ignore alerts. The line between healthy skepticism and alert fatigue is context-dependent and poorly documented in public literature.
+
+## 8. Takeaways
+
+Human-centered AI is feasible as an engineering stance, but it requires architectural commitment early—not a layer of explainability pasted on after deployment.
+
+The ordinary computer scientist's obligation, as I see it, is to document tradeoffs plainly: what we automated, what we left inspectable, and what we still do not know.
+
+<CitationBlock items={references} />

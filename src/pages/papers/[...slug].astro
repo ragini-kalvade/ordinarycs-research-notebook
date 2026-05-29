@@ -1,0 +1,21 @@
+---
+import { getCollection, render } from 'astro:content';
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FigureBlock from '../../components/FigureBlock';
+import CitationBlock from '../../components/CitationBlock';
+
+export async function getStaticPaths() {
+  const papers = await getCollection('papers');
+  return papers.map((paper) => ({
+    params: { slug: paper.id },
+    props: { paper },
+  }));
+}
+
+const { paper } = Astro.props;
+const { Content } = await render(paper);
+---
+
+<ArticleLayout paper={paper}>
+  <Content components={{ FigureBlock, CitationBlock }} />
+</ArticleLayout>
