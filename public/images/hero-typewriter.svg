@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 514" role="img" aria-label="Vintage typewriter with papers">
+  <rect width="1200" height="514" fill="#e5e2e1"/>
+  <rect x="80" y="120" width="480" height="280" fill="#c4c6cf"/>
+  <rect x="120" y="160" width="400" height="120" fill="#74777f"/>
+  <rect x="640" y="180" width="320" height="24" fill="#43474e"/>
+  <rect x="640" y="220" width="280" height="16" fill="#74777f"/>
+  <rect x="640" y="252" width="300" height="16" fill="#74777f"/>
+  <rect x="640" y="284" width="240" height="16" fill="#74777f"/>
+  <text x="600" y="460" text-anchor="middle" font-family="Georgia, serif" font-size="18" fill="#43474e">Editorial photograph  placeholder</text>
+</svg>
